@@ -14,7 +14,7 @@ ft_strcmp:
     je .equal
 
     inc rax
-    je .loop
+    jmp .loop
 
 .different:
     ; TODO: Calculate return value (al - bl) into rax
@@ -23,6 +23,6 @@ ft_strcmp:
     sub rax, rbx               ; rax = rax - rbx
     ret
 
-.equal
+.equal:
     mov rax, 0
     ret
