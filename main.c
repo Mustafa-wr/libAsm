@@ -1,13 +1,15 @@
 #include <stdio.h>
 
 
-
-size_t ft_strlen(const char *s);
-
+int ft_strcmp(const char *s1, const char *s2);
 
 int main() {
     const char *test_str = "Hello, World!";
-    size_t length = ft_strlen(test_str);
-    printf("Length of '%s' is %zu\n", test_str, length);
+    char *str = "Hello, World!a";
+    // printf(str, test_str);
+    printf("%d\n", ft_strcmp(str, test_str));
     return 0;
 }
+
+// docker build -t libasm .
+// docker run -it -v /Users/mradwan/Desktop/libasm:/app libasm
