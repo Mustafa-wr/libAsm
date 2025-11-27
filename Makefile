@@ -1,6 +1,6 @@
 NAME = libasm.a
 
-SRC_ASM = ft_strlen.s ft_strcpy.s ft_strcmp.s ft_read.s ft_write.s 
+SRC_ASM = ft_strlen.s ft_strcpy.s ft_strcmp.s ft_read.s ft_write.s ft_strdup.s
 OBJ_ASM = $(SRC_ASM:.s=.o)
 
 NASM = nasm
