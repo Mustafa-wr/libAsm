@@ -1,24 +1,29 @@
+; rax = 64 bits (8 bytes)
+; eax = 32 bits (4 bytes)
+; ax  = 16 bits (2 bytes)
+; al  =  8 bits (1 byte)
+
 section .text
     global ft_strcmp
 
 ft_strcmp:
-    mov rax, 0                  ; index = 0
+    mov rcx, 0                ; rcx = 0 (use rcx as index instead of rax!)
 
 .loop:
-    mov al, BYTE [rdi + rax]  ; al = s1[0]
-    mov bl, BYTE [rsi + rax]  ; bl = s2[0]
+    mov al, BYTE [rdi + rcx]    ; al = s1[index]
+    mov bl, BYTE [rsi + rcx]    ; bl = s2[index]
     cmp al, bl
     jne .different
 
-    cmp al, 0
-    je .equal
+    test al, al                 ; Check for null (shorter)
+    jz .equal
 
-    inc rax
+    inc rcx                     ; Increment index
     jmp .loop
 
+
 .different:
-    ; TODO: Calculate return value (al - bl) into rax
-    movzx rax, al              ; Zero-extend al to rax
+    movzx rax, al              ; Zero-extend al to rax 
     movzx rbx, bl              ; Zero-extend bl to rbx
     sub rax, rbx               ; rax = rax - rbx
     ret

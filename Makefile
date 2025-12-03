@@ -9,9 +9,6 @@ NASMFLAGS = -f elf64
 AR = ar
 ARFLAGS = rcs
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-
 all: $(NAME)
 
 $(NAME): $(OBJ_ASM)
@@ -19,6 +16,9 @@ $(NAME): $(OBJ_ASM)
 
 %.o: %.s
 	$(NASM) $(NASMFLAGS) $< -o $@
+
+test: $(NAME)
+	gcc main.c -L. -lasm -o test
 
 clean:
 	rm -f $(OBJ_ASM)

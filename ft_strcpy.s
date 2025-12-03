@@ -1,3 +1,8 @@
+; rax = 64 bits (8 bytes)
+; eax = 32 bits (4 bytes)
+; ax  = 16 bits (2 bytes)
+; al  =  8 bits (1 byte)
+
 section .text
     global ft_strcpy
 
@@ -17,7 +22,3 @@ ft_strcpy:
 
 .done:
     ret
-
-
-; Mark stack as non-executable (security feature)
-section .note.GNU-stack noalloc noexec nowrite progbits

@@ -1,3 +1,7 @@
+; rax = 64 bits (8 bytes)
+; eax = 32 bits (4 bytes)
+; ax  = 16 bits (2 bytes)
+; al  =  8 bits (1 byte)
 section .text
     global ft_read
     extern __errno_location

@@ -13,6 +13,3 @@ ft_strlen:
 
 .done:
     ret
-
-; Mark stack as non-executable (security feature)
-section .note.GNU-stack noalloc noexec nowrite progbits
