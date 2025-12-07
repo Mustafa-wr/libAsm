@@ -7,7 +7,7 @@ ft_write:
     mov rax, 1
     syscall
 
-    test rax, rax
+    cmp rax, 0
     js .error
 
     ret

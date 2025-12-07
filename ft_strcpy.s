@@ -10,15 +10,16 @@ ft_strcpy:
     mov rax, rdi
     mov rcx, 0
 
-    .loop:
-        mov al, BYTE [rsi + rcx]
-        mov BYTE [rdi + rcx], al
+.loop:
+    mov al, BYTE [rsi + rcx]
+    mov BYTE [rdi + rcx], al
 
-        cmp al, 0
-        je .done
-        inc rcx
-        
-        jmp .loop
+    cmp al, 0
+    je .done
+    inc rcx
+    
+    jmp .loop
 
 .done:
+    mov rax, rdi
     ret

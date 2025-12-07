@@ -15,7 +15,7 @@ ft_strcmp:
     cmp al, bl
     jne .different
 
-    test al, al                 ; Check for null (shorter)
+    cmp al, 0                 ; Check for null (shorter)
     jz .equal
 
     inc rcx                     ; Increment index

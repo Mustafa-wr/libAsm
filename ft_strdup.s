@@ -13,13 +13,12 @@ ft_strdup:
     mov rdi, rax
     call malloc wrt ..plt
 
-    test rax, rax
+    cmp rax, 0
     jz .error
 
     mov r12, rax ; save malloc pointer
 
     pop rsi ; restore the original src pointer to do strcpy
-    mov rdi, rax
     call ft_strcpy wrt ..plt 
 
     mov rax, r12 ; returned malloc ponter

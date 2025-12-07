@@ -10,7 +10,7 @@ ft_read:
     mov rax, 0
     syscall
 
-    test rax, rax
+    cmp rax, 0
     js .error
 
     ret
